@@ -1,13 +1,18 @@
-import type { ReactNode } from "react";
+import type { ButtonHTMLAttributes, ReactNode } from "react";
 import { cn } from "@/utils/cn";
 
-interface ButtonProps {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children?: ReactNode;
   className?: string;
   variant?: "primary" | "secondary";
 }
 
-export default function Button({ children, className, variant = "primary" }: ButtonProps) {
+export default function Button({
+  children,
+  className,
+  variant = "primary",
+  ...props
+}: ButtonProps) {
   return (
     <button
       className={cn(
@@ -38,6 +43,7 @@ export default function Button({ children, className, variant = "primary" }: But
         `,
         className,
       )}
+      {...props}
     >
       {children}
     </button>

@@ -4,10 +4,12 @@ import AnimatedBadge from "@/components/common/Badge/AnimatedBadge";
 import Container from "@/components/common/Container/Container";
 import { heroData } from "@/data/heroData";
 import useFadeUp from "@/hooks/animations/useFadeUp";
+import { useContactModal } from "@/lib/ContactModalContext";
 
 export function Hero() {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const descRef = useRef<HTMLParagraphElement>(null);
+  const { open } = useContactModal();
 
   useFadeUp(titleRef);
 
@@ -16,7 +18,8 @@ export function Hero() {
   });
 
   return (
-    <section  id="hero"
+    <section
+      id="hero"
       className="
       relative
       overflow-hidden
@@ -61,6 +64,8 @@ export function Hero() {
 
           <div className="mt-8 flex gap-4">
             <Button
+              type="button"
+              onClick={open}
               className="
         rounded-xl
      text-[#3a2fda] bg-[#eeeef3]
@@ -71,7 +76,11 @@ export function Hero() {
               {heroData.primaryButton.label}
             </Button>
 
-            <Button className="bg-[#3a2fda] text-[#eeeef3]">
+            <Button
+              type="button"
+              onClick={open}
+              className="bg-[#3a2fda] text-[#eeeef3]"
+            >
               {heroData.secondaryButton.label}
             </Button>
           </div>

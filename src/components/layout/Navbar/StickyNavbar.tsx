@@ -17,8 +17,7 @@ export default function StickyNavbar() {
       const hero = document.getElementById("hero");
 
       if (hero) {
-        const heroBottom =
-          hero.offsetTop + hero.offsetHeight - 80;
+        const heroBottom = hero.offsetTop + hero.offsetHeight - 80;
 
         setShow(window.scrollY > heroBottom);
       } else {
@@ -53,7 +52,8 @@ export default function StickyNavbar() {
         <div
           className="
             h-20
-            rounded-4xl
+            border
+            rounded-full
             bg-white
             shadow-lg
             px-8
@@ -70,18 +70,12 @@ export default function StickyNavbar() {
           </div>
 
           <div className="block min-[1140px]:hidden">
-            <MobileMenuButton
-              isOpen={isOpen}
-              setIsOpen={setIsOpen}
-            />
+            <MobileMenuButton isOpen={isOpen} setIsOpen={setIsOpen} />
           </div>
         </div>
       </Container>
 
-      <MobileMenu
-        isOpen={isOpen}
-        setIsOpen={setIsOpen}
-      />
+      <MobileMenu isOpen={isOpen} setIsOpen={setIsOpen} />
     </header>
   );
 }

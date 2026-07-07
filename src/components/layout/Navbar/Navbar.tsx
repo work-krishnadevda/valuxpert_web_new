@@ -8,8 +8,6 @@ import NavActions from "./NavActions";
 import MobileMenu from "./MobileMenu";
 import MobileMenuButton from "./MobileMenuButton";
 
-
-
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [show, setShow] = useState(true);

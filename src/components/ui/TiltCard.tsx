@@ -1,16 +1,16 @@
-import { useRef, type PointerEvent, type ReactNode } from 'react';
+import { useRef, type PointerEvent, type ReactNode } from "react";
 
-/**
- * Subtle cursor-reactive tilt for cards (design spec: "cards should
- * slightly respond to cursor movement"). Pure CSS transform driven by
- * pointer position — no extra dependency, respects prefers-reduced-motion
- * implicitly since the effect is small and only fires on pointer devices.
- */
-export function TiltCard({ children, className = '' }: { children: ReactNode; className?: string }) {
+export function TiltCard({
+  children,
+  className = "",
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
   const ref = useRef<HTMLDivElement>(null);
 
   const handleMove = (e: PointerEvent<HTMLDivElement>) => {
-    if (e.pointerType !== 'mouse') return;
+    if (e.pointerType !== "mouse") return;
     const node = ref.current;
     if (!node) return;
     const rect = node.getBoundingClientRect();
@@ -22,7 +22,8 @@ export function TiltCard({ children, className = '' }: { children: ReactNode; cl
   const handleLeave = () => {
     const node = ref.current;
     if (!node) return;
-    node.style.transform = 'perspective(800px) rotateY(0deg) rotateX(0deg) translateY(0)';
+    node.style.transform =
+      "perspective(800px) rotateY(0deg) rotateX(0deg) translateY(0)";
   };
 
   return (

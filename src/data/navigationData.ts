@@ -9,7 +9,7 @@ export const navigation = [
   },
   {
     title: "Workflow",
-    href: "#workflow",
+    href: "#lifecycle",
   },
   {
     title: "HRMS",
@@ -17,7 +17,7 @@ export const navigation = [
   },
   {
     title: "Field Tools",
-    href: "#field-tools",
+    href: "#pipeline",
   },
   {
     title: "Pricing",
