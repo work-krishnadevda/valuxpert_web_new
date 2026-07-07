@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: theme('fontFamily.display');
+  }
+
+  ::selection {
+    background-color: theme('colors.brand.400');
+    color: theme('colors.surface.dark1');
+  }
+}
+
+@layer utilities {
+  /* Scroll-reveal primitive used across sections via the useInView hook.
+     Elements start hidden/offset and settle into place once in viewport. */
+  .reveal-up {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s theme('transitionTimingFunction.premium'), transform 0.7s theme('transitionTimingFunction.premium');
+    will-change: opacity, transform;
+  }
+  .reveal-up.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-fade {
+    opacity: 0;
+    transition: opacity 0.8s ease-out;
+  }
+  .reveal-fade.is-visible {
+    opacity: 1;
+  }
+
+  /* Gentle perpetual float used for "Before vs After" comparison rows and
+     other elements that should feel alive without stealing attention. */
+  @keyframes gentle-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+  .animate-gentle-float {
+    animation: gentle-float 5s ease-in-out infinite;
+  }
+
+  @keyframes orbit-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  @keyframes orbit-spin-reverse {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(-360deg); }
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply inline-flex items-center gap-1.5 rounded-pill border border-brand-500/15 bg-brand-500/10 px-3.5 py-1.5 text-eyebrow uppercase text-brand-600;
+  }
+
+  .eyebrow-dark {
+    @apply inline-flex items-center gap-1.5 rounded-pill border border-white/15 bg-white/10 px-3.5 py-1.5 text-eyebrow uppercase text-brand-400 backdrop-blur-sm;
+  }
+
+  .pill {
+    @apply inline-flex items-center gap-2 rounded-pill border border-ink-light/10 bg-white/70 px-3.5 py-1.5 text-nav text-ink-light shadow-[0_1px_0_rgba(255,255,255,0.6)_inset] backdrop-blur-sm;
+  }
+
+  .pill-dark {
+    @apply inline-flex items-center gap-2 rounded-pill border border-white/15 bg-white/[0.06] px-3.5 py-1.5 text-nav text-white backdrop-blur-sm;
+  }
+
+  .card-light {
+    @apply rounded-card border border-ink-light/10 bg-white shadow-light transition-shadow duration-300;
+  }
+
+  .card-dark {
+    @apply rounded-card border border-white/[0.08] bg-surface-dark2;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-control bg-accent-action px-7 py-3.5 text-nav font-semibold text-surface-dark1 transition-all duration-300 ease-premium hover:-translate-y-0.5 hover:bg-accent-actionDark hover:shadow-glow-amber;
+  }
+
+  .btn-ghost-dark {
+    @apply inline-flex items-center justify-center rounded-control border border-white/20 px-7 py-3.5 text-nav font-semibold text-white transition-colors duration-300 hover:bg-white/10;
+  }
+
+  .btn-ghost-light {
+    @apply inline-flex items-center justify-center rounded-control border border-ink-light/15 px-7 py-3.5 text-nav font-semibold text-ink-light transition-colors duration-300 hover:bg-ink-light/5;
+  }
+
+  .section-pad {
+    @apply py-24 md:py-32;
+  }
+
+  /* Soft radial glow accents used behind headlines on light and dark
+     sections — mirrors the diffused color-wash treatment behind hero and
+     CTA copy in the reference study. Purely decorative, pointer-events none. */
+  .glow-orb-brand {
+    @apply pointer-events-none absolute rounded-full opacity-70 blur-3xl;
+    background: radial-gradient(circle, rgba(139, 124, 218, 0.35), transparent 70%);
+  }
+
+  .glow-orb-amber {
+    @apply pointer-events-none absolute rounded-full opacity-60 blur-3xl;
+    background: radial-gradient(circle, rgba(183, 171, 234, 0.3), transparent 70%);
+  }
+
+  /* Framed panel: a large rounded, glowing container used for CTA and
+     showcase moments — the "banner inside a banner" composition seen
+     repeatedly in the reference (integrations, CTA, quote blocks). */
+  .panel-framed-dark {
+    @apply relative overflow-hidden rounded-card border border-white/10 bg-surface-dark1;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
