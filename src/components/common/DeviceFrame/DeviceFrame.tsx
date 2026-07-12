@@ -17,10 +17,12 @@ export function MonitorFrame({ children, className = "" }: FrameProps) {
             <span className="h-2 w-2 rounded-full bg-[#F5BD4F]" />
             <span className="h-2 w-2 rounded-full bg-[#61C454]" />
             <span className="ml-2 text-[10px] font-medium text-ink-dark/40">
-              app.valuxpert.com
+              https://www.valuxpert.in/
             </span>
           </div>
-          <div className="aspect-[16/10] w-full overflow-hidden">{children}</div>
+          <div className="aspect-[16/10] w-full overflow-hidden">
+            {children}
+          </div>
         </div>
       </div>
 
@@ -37,7 +39,9 @@ export function PhoneFrame({ children, className = "" }: FrameProps) {
         <div className="pointer-events-none absolute inset-x-10 -top-px h-px bg-gradient-to-r from-transparent via-brand-400/70 to-transparent" />
         <div className="relative overflow-hidden rounded-[1.65rem] border border-white/10 bg-surface-dark1">
           <div className="absolute left-1/2 top-2 z-10 h-4 w-20 -translate-x-1/2 rounded-full bg-[#0a0a0a]" />
-          <div className="aspect-[9/19.5] w-full overflow-hidden">{children}</div>
+          <div className="aspect-[9/19.5] w-full overflow-hidden">
+            {children}
+          </div>
         </div>
       </div>
     </div>

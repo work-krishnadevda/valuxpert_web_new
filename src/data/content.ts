@@ -16,12 +16,9 @@ export const heroChips = [
 ];
 
 export const trustLogos = [
-  "Apex Valuations",
-  "Precision Appraisals",
-  "Urban Realty Experts",
-  "Northbridge Capital",
-  "Meridian Advisory",
-  "Anchorline Bank",
+  "Real Apple",
+  "Madhukar Associate",
+  "Bohra Associate",
 ];
 
 export const problemCards = [
