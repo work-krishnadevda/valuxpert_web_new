@@ -1,5 +1,5 @@
-import { Container } from '@/components/ui/Container';
-import { trustLogos } from '@/data/content';
+import { Container } from "@/components/ui/Container";
+import { trustLogos } from "@/data/content";
 
 export function TrustBar() {
   return (
@@ -8,7 +8,7 @@ export function TrustBar() {
         <p className="mb-6 text-center text-eyebrow uppercase text-ink-muted">
           Trusted by empanelled valuation partners across India
         </p>
-        <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-4">
+        <div className="flex flex-wrap items-center justify-center gap-x-64 gap-y-4">
           {trustLogos.map((name) => (
             <span
               key={name}
