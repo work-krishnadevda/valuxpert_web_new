@@ -375,8 +375,7 @@ export const sopStages = [
 ];
 
 export const sopNarrative =
-  '"Pehele case email through COO ke pass jata hai, COO case create krti hai. Then FE ke pass jata hai vahan se site visit hoti hai. Then SDM DM ko case allot karta hai. Phir DM draft create karta hai, RC physical metrics se report banata hai, then LCTO verification verify check karta hai, and final submission bank ko ho jati hai."';
-
+  "The process begins when the COO receives the case via email and creates it in the system. The case is then assigned to the Field Executive, who performs the site inspection. Once the inspection is completed, the SDM assigns the case to the Draft Maker, who prepares the draft report. The Report Checker then generates the final valuation report based on the collected site data and physical measurements. Next, the LCTO reviews and verifies the report for accuracy. After successful verification, the completed report is submitted to the bank.";
 export type SystemRole = {
   id: string;
   name: string;
