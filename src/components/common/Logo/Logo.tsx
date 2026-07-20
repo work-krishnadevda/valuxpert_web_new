@@ -12,11 +12,13 @@ export default function Logo({
   alt = "ValuXpert",
 }: LogoProps) {
   return (
-    <img
-      src={logo}
-      alt={alt}
-      className={className}
-      style={{ height, width: "auto", display: "block" }}
-    />
+    <a href="main-content">
+      <img
+        src={logo}
+        alt={alt}
+        className={className}
+        style={{ height, width: "auto", display: "block" }}
+      />
+    </a>
   );
 }
