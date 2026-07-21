@@ -62,8 +62,8 @@ export const CITY_BUILDINGS = [
       desktop: "73%",
     },
     top: {
-      mobile: "59%",
-      desktop: "54%",
+      mobile: "62%",
+      desktop: "65%",
     },
     title: "Geo Location Validation Field Tracking",
     desc: "Live field engineer movement maps with location-validated watermarked photos",

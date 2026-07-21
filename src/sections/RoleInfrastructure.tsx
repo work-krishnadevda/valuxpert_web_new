@@ -63,7 +63,7 @@ export function RoleInfrastructure() {
       </Container>
 
       <Container className="mt-10">
-        <div className="overflow-hidden rounded-card border border-ink-light/10 bg-white">
+        <div className="overflow-hidden rounded-t-card rounded-b-none border border-ink-light/10 bg-white">
           {systemRoles.map((role) => {
             const isActive = role.id === activeRoleId;
             return (
@@ -109,7 +109,7 @@ export function RoleInfrastructure() {
           })}
         </div>
 
-        <div className="relative overflow-hidden rounded-card bg-surface-dark1 p-6 md:p-8">
+        <div className="relative overflow-hidden rounded-t-none rounded-b-card bg-surface-dark1 p-6 md:p-8">
           <div className="glow-orb-brand left-0 top-0 h-[260px] w-[380px] -translate-x-1/3 -translate-y-1/3" />
           <p className="text-nav font-semibold text-white">Role System</p>
           <p className="max-w-md text-xs text-ink-dark/60">
