@@ -1,6 +1,6 @@
 # MyValue
 
-**MyValue** is the production codebase for the ValuXpert marketing website — an interactive product-film experience built for property valuation companies, engineered to the premium enterprise design standard specified in the ValuXpert Website Design & Experience Specification (v2).
+**MyValue** is the production codebase for the ValuXpert marketing website — an interactive product-film experience built for property valuation companies, engineered to the premium enterprise design standard specified in the ValuXpert Website Design & Experience Specification (v2)..
 
 > **Branding note:** `MyValue` is the internal project/repository name only. All user-facing UI, copy, and branding in the running application is **ValuXpert**.
 
