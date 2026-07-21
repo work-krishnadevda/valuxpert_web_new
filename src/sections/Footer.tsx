@@ -3,8 +3,10 @@ import { Container } from "@/components/ui/Container";
 import { footerLinks } from "@/data/content";
 import Logo from "@/components/common/Logo/Logo";
 import { useState } from "react";
+import { useContactModal } from "@/lib/ContactModalContext";
 
 export function Footer() {
+  const { open } = useContactModal();
   const [modal, setModal] = useState<{
     title: string;
     content: string;
@@ -46,10 +48,26 @@ export function Footer() {
                 info@valuxpert.in
               </a>
             </p>
+
+            <p className="mt-1 text-sm">
+              Phone:{" "}
+              <a
+                href="tel:+918770924535"
+                className="text-ink-light underline-offset-2 hover:underline"
+              >
+                +91 87709 24535
+              </a>
+            </p>
             <div className="mt-4 flex gap-4 text-ink-muted">
-              <Globe size={18} />
-              <Mail size={18} />
-              <ShieldCheck size={18} />
+              <a href="#hero" aria-label="ValuXpert — go to homepage">
+                <Globe size={18} />
+              </a>
+              <button onClick={open}>
+                <Mail size={18} />
+              </button>
+              <a href="#hero" aria-label="ValuXpert — go to homepage">
+                <ShieldCheck size={18} />
+              </a>
             </div>
           </div>
         </div>

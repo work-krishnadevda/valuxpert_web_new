@@ -1,8 +1,8 @@
 import Button from "@/components/common/Button/Button";
-import { useContactModal } from "@/lib/ContactModalContext";
+import { useBookingModal } from "@/lib/BookingModalContext";
 
 export default function NavActions() {
-  const { open } = useContactModal();
+  const { open } = useBookingModal();
 
   return (
     <div className="hidden lg:flex items-center gap-4">

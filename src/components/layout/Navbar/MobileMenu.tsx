@@ -79,17 +79,44 @@ export default function MobileMenu({ isOpen, setIsOpen, id = "mobile-menu" }: Mo
             </a>
           ))}
 
-          <Button
-            type="button"
-            tabIndex={isOpen ? 0 : -1}
-            onClick={() => {
-              setIsOpen(false);
-              open();
-            }}
-            className="mt-3 w-full"
-          >
-            Request a Demo
-          </Button>
+          <button
+  type="button"
+  tabIndex={isOpen ? 0 : -1}
+  onClick={() => {
+    setIsOpen(false);
+    open();
+  }}
+  className="
+    rounded-lg
+    px-2
+    py-3
+    text-left
+    text-base
+    font-medium
+    text-[#2B285A]
+    transition-colors
+    hover:bg-black/5
+    focus-visible:outline
+    focus-visible:outline-2
+    focus-visible:outline-offset-2
+    focus-visible:outline-[#3A2FDA]
+    sm:text-lg
+  "
+>
+  Contact
+</button>
+
+<Button
+  type="button"
+  tabIndex={isOpen ? 0 : -1}
+  onClick={() => {
+    setIsOpen(false);
+    open();
+  }}
+  className="mt-3 w-full"
+>
+  Request a Demo
+</Button>
         </nav>
       </div>
     </div>

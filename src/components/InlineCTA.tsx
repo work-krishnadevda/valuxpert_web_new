@@ -1,5 +1,5 @@
 import { Container } from '@/components/ui/Container';
-import { useContactModal } from '@/lib/ContactModalContext';
+import { useBookingModal } from '@/lib/BookingModalContext';
 
 interface InlineCTAProps {
   title: string;
@@ -8,7 +8,7 @@ interface InlineCTAProps {
 }
 
 export function InlineCTA({ title, description, buttonLabel = 'Request Demo Presentation' }: InlineCTAProps) {
-  const { open } = useContactModal();
+  const { open } = useBookingModal();
   return (
     <Container>
       <div className="flex flex-col items-start justify-between gap-6 rounded-card bg-surface-light2 p-8 md:flex-row md:items-center">

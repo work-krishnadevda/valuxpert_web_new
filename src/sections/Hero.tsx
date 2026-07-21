@@ -6,12 +6,12 @@ import AnimatedBadge from "@/components/common/Badge/AnimatedBadge";
 import Container from "@/components/common/Container/Container";
 import { heroData } from "@/data/heroData";
 import useFadeUp from "@/hooks/animations/useFadeUp";
-import { useContactModal } from "@/lib/ContactModalContext";
+import { useBookingModal } from "@/lib/BookingModalContext";
 
 export function Hero() {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const descRef = useRef<HTMLParagraphElement>(null);
-  const { open } = useContactModal();
+const { open: openBooking } = useBookingModal();
 
   useFadeUp(titleRef);
   useFadeUp(descRef, { delay: 0.2 });
@@ -105,7 +105,7 @@ xl:text-[6.2rem]
           >
             <Button
               type="button"
-              onClick={open}
+              onClick={openBooking}
               className="
               group
               h-14
@@ -131,30 +131,19 @@ xl:text-[6.2rem]
               </span>
             </Button>
 
-            <Button
-              type="button"
-              onClick={open}
-              className="
-              group
-              h-14
-              rounded-2xl
-              border
-              border-white/20
-              bg-white/10
-              px-8
-              text-white
-              backdrop-blur-xl
-              transition-all
-              duration-300
-              hover:-translate-y-1
-              hover:bg-white/20
-            "
-            >
-              <span className="flex items-center gap-2">
-                <Play size={16} className="fill-current" />
-                {heroData.secondaryButton.label}
-              </span>
-            </Button>
+            <a
+  href="https://docs-whisperer-guide.lovable.app/"
+  target="_ "
+  className="group inline-flex h-14 items-center justify-center rounded-2xl border border-white/15 bg-white/10 px-8 font-medium text-white backdrop-blur-xl shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-white/30 hover:bg-white/20 hover:shadow-xl active:scale-95"
+>
+  <span className="flex items-center gap-2.5">
+    <Play
+      size={16}
+      className="fill-current transition-transform duration-300 group-hover:scale-110"
+    />
+    {heroData.secondaryButton.label}
+  </span>
+</a>
           </div>
 
           <div

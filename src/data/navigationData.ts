@@ -23,8 +23,5 @@ export const navigation = [
     title: "Pricing",
     href: "#pricing",
   },
-  {
-    title: "Contact",
-    href: "#contact",
-  },
+  
 ];

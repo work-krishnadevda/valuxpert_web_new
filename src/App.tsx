@@ -24,6 +24,8 @@ import { Testimonials } from "@/sections/Testimonials";
 import { Pricing } from "@/sections/Pricing";
 import { CTA } from "@/sections/CTA";
 import { Footer } from "@/sections/Footer";
+import { BookingModalProvider } from "@/lib/BookingModalContext";
+import BookingModal from "@/components/common/Booking/BookingModal";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -36,11 +38,12 @@ function App() {
 
   return (
     <ContactModalProvider>
-      <ActiveDeskProvider>
-        <SmoothScrollProvider>
-          <a
-            href="#main-content"
-            className="
+      <BookingModalProvider>
+        <ActiveDeskProvider>
+          <SmoothScrollProvider>
+            <a
+              href="#main-content"
+              className="
               fixed
               left-4
               top-4
@@ -63,41 +66,43 @@ function App() {
               focus-visible:outline-offset-2
               focus-visible:outline-white
             "
-          >
-            Skip to main content
-          </a>
-          <Navbar />
-          <StickyNavbar />
-          <main id="main-content">
-            <Hero />
+            >
+              Skip to main content
+            </a>
+            <Navbar />
+            <StickyNavbar />
+            <main id="main-content">
+              <Hero />
 
-            <CityMap />
-            <BeforeAfterSimulator />
-            <ProblemSection />
-            <TrustBar />
+              <CityMap />
+              <BeforeAfterSimulator />
+              <ProblemSection />
+              <TrustBar />
 
-            <div className="bg-surface-light1 pt-24">
-              <InlineCTA
-                title="Ready to recover leakages and secure operational compliance?"
-                description="Every day spent logging diaries manually, matching JPEG images, and copy-pasting Excel coordinates risks major SLA breaches. Secure your bank partnerships with a fully unified workflow."
-              />
-            </div>
+              <div className="bg-surface-light1 pt-24">
+                <InlineCTA
+                  title="Ready to recover leakages and secure operational compliance?"
+                  description="Every day spent logging diaries manually, matching JPEG images, and copy-pasting Excel coordinates risks major SLA breaches. Secure your bank partnerships with a fully unified workflow."
+                />
+              </div>
 
-            <SOPBlueprint />
-            <RoleInfrastructure />
-            <ActiveDeskSandbox />
-            <Lifecycle />
-            <FeatureEcosystem />
-            <HRMS />
-            <Metrics />
-            <Testimonials />
-            <Pricing />
-            <CTA />
-          </main>
-          <Footer />
-          <ContactModal />
-        </SmoothScrollProvider>
-      </ActiveDeskProvider>
+              <SOPBlueprint />
+              <RoleInfrastructure />
+              <ActiveDeskSandbox />
+              <Lifecycle />
+              <FeatureEcosystem />
+              <HRMS />
+              <Metrics />
+              <Testimonials />
+              <Pricing />
+              <CTA />
+            </main>
+            <Footer />
+            <ContactModal />
+            <BookingModal />
+          </SmoothScrollProvider>
+        </ActiveDeskProvider>
+      </BookingModalProvider>
     </ContactModalProvider>
   );
 }

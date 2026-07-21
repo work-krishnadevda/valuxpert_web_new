@@ -127,9 +127,10 @@ export function ContactModal() {
           </button>
 
           <div
-            ref={scrollRef}
-            className="max-h-[calc(100vh-40px)] overflow-y-auto premium-scroll"
-          >
+  ref={scrollRef}
+  data-lenis-prevent
+  className="max-h-[calc(100vh-40px)] overflow-y-auto premium-scroll"
+>
             <div className="grid grid-cols-1 lg:grid-cols-[420px_1fr]">
               {/* LEFT PANEL */}
 

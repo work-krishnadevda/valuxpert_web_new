@@ -1,8 +1,10 @@
 import { Container } from '@/components/ui/Container';
 import { useContactModal } from '@/lib/ContactModalContext';
+import { useBookingModal } from '@/lib/BookingModalContext';
 
 export function CTA() {
-  const { open } = useContactModal();
+  const { open:openContact } = useContactModal();
+   const { open:openBooking } = useBookingModal();
   return (
     <section className="bg-surface-light1 py-16 md:py-24">
       <Container>
@@ -17,10 +19,10 @@ export function CTA() {
             Join the leading valuation agencies that trust ValuXpert to power their professional ecosystem.
           </p>
           <div className="relative flex flex-wrap justify-center gap-4">
-            <button type="button" onClick={open} className="btn-primary">
+            <button type="button" onClick={openBooking} className="btn-primary">
               Request a Demo
             </button>
-            <button type="button" onClick={open} className="btn-ghost-dark">
+            <button type="button" onClick={openContact} className="btn-ghost-dark">
               Contact Sales
             </button>
           </div>
