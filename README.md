@@ -14,7 +14,7 @@ This project is built exclusively on:
 - **Tailwind CSS** — design tokens extracted from the approved design specification
 - **GSAP** + **ScrollTrigger** — all scroll-tied choreography and micro-interactions
 - **Lenis** — smooth-scroll root, synced to GSAP's ticker
-- **Three.js** + **React Three Fiber** + **Drei** — the four hero-weight 3D scenes (hero hologram, day-in-the-life office transformation)
+- **CSS/SVG visuals** — the hero hologram, "chaos to control", and "day in the life" scenes are built with plain CSS animations/transitions, no 3D engine
 
 No other frontend framework, animation library, or 3D engine is used anywhere in this codebase.
 
@@ -46,14 +46,14 @@ MyValue/
 ├── public/                  # static assets (favicon, robots.txt)
 ├── src/
 │   ├── components/
-│   │   ├── three/           # R3F scenes + lazy-load wrappers + static fallbacks
+│   │   ├── visuals/          # CSS/SVG hero + scroll-scrubbed scene visuals
 │   │   ├── ui/               # Container, SectionHeading, Icon — shared primitives
 │   │   ├── Nav.tsx
 │   │   ├── ContactModal.tsx
 │   │   └── InlineCTA.tsx
 │   ├── data/
 │   │   └── content.ts       # all site copy/content in one place
-│   ├── hooks/                # useReducedMotion, useLowPowerDevice, useCountUp, useInView
+│   ├── hooks/                # useReducedMotion, useCountUp, useInView
 │   ├── lib/                   # SmoothScrollProvider (Lenis), ContactModalContext
 │   ├── sections/             # one component per IA section (Hero, BeforeAfterSimulator, …)
 │   ├── styles/globals.css
@@ -69,14 +69,14 @@ MyValue/
 
 ## Sections Implemented
 
-Hero · Trust Bar · Problem Section · Before/After Simulator (role-tabbed) · Day in the Life (scroll-scrubbed 3D cinematic) · SOP Blueprint & Comparison Table · Role-Based Infrastructure + Interactive Pipeline Map (wired together) · Active Desk Sandbox (Field Engineer / Draft Manager / LCTO simulators) · Optimized Valuation Lifecycle · Feature Ecosystem · Unified HR Operations · Proof Metrics · Testimonials · Pricing · Final CTA · Footer · Contact Modal.
+Hero · Trust Bar · Problem Section · Before/After Simulator (role-tabbed) · Day in the Life (scroll-scrubbed cinematic) · SOP Blueprint & Comparison Table · Role-Based Infrastructure + Interactive Pipeline Map (wired together) · Active Desk Sandbox (Field Engineer / Draft Manager / LCTO simulators) · Optimized Valuation Lifecycle · Feature Ecosystem · Unified HR Operations · Proof Metrics · Testimonials · Pricing · Final CTA · Footer · Contact Modal.
 
 ---
 
 ## Performance & Accessibility
 
-- Every WebGL `<Canvas>` is **lazy-loaded** (`React.lazy` + `Suspense`) and only mounted once its section scrolls near the viewport (`useInView`).
-- `prefers-reduced-motion` and a low-power-device heuristic (`useLowPowerDevice`) swap every 3D scene and scroll-scrub animation for a static fallback or instant state — see `src/components/three/SceneFallback.tsx`.
+- Scroll-scrubbed visuals (`src/components/visuals/`) are pure CSS/SVG — no canvas, no lazy-loaded 3D bundle.
+- `prefers-reduced-motion` swaps every orbiting/scrubbed animation for an instant static state (see `useReducedMotion`).
 - All data reveals (timelines, tables, pipeline nodes) have a fully readable static DOM; nothing depends on JavaScript animation to be legible.
 - Semantic landmarks, `aria-label`/`aria-expanded`/`aria-selected` on interactive controls, and keyboard-dismissible modal (`Escape` key) are implemented throughout.
 

@@ -1,4 +1,4 @@
-import city from "@/assets/images/city.png";
+import city from "@/assets/images/city.webp";
 import Building from "./Building";
 import { CITY_BUILDINGS } from "@/data/cityMapData";
 import usePopupCycle from "@/hooks/animations/usePopupCycle";
@@ -28,7 +28,11 @@ export default function CityMap() {
         >
           <img
             src={city}
-            alt="City"
+            alt="Illustrated city skyline representing ValuXpert's field coverage"
+            width={1600}
+            height={676}
+            loading="lazy"
+            decoding="async"
             className="block w-full h-auto select-none pointer-events-none"
           />
 

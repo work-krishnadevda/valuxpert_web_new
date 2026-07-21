@@ -1,4 +1,4 @@
-import logo from "@/assets/logos/logo.png";
+import logo from "@/assets/logos/logo.webp";
 
 interface LogoProps {
   height?: number;
@@ -12,11 +12,17 @@ export default function Logo({
   alt = "ValuXpert",
 }: LogoProps) {
   return (
-    <img
-      src={logo}
-      alt={alt}
-      className={className}
-      style={{ height, width: "auto", display: "block" }}
-    />
+    <a href="#hero" aria-label="ValuXpert — go to homepage">
+      <img
+        src={logo}
+        alt={alt}
+        width={161}
+        height={40}
+        fetchPriority="high"
+        decoding="async"
+        className={className}
+        style={{ height, width: "auto", display: "block" }}
+      />
+    </a>
   );
 }

@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 
 /**
- * Mounts heavy content (WebGL canvases) only once the container has actually
- * scrolled near the viewport, instead of on first paint.
+ * Mounts heavy content only once the container has actually scrolled near
+ * the viewport, instead of on first paint.
  */
 export function useInView<T extends HTMLElement>(rootMargin = '200px') {
   const ref = useRef<T | null>(null);

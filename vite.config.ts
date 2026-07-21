@@ -13,11 +13,16 @@ export default defineConfig({
   build: {
     target: 'es2020',
     sourcemap: false,
+    cssCodeSplit: true,
+    cssMinify: true,
+    assetsInlineLimit: 4096,
+    chunkSizeWarningLimit: 600,
     rollupOptions: {
       output: {
         manualChunks: {
-          three: ['three', '@react-three/fiber', '@react-three/drei'],
+          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
           gsap: ['gsap'],
+          lenis: ['@studio-freight/lenis'],
         },
       },
     },

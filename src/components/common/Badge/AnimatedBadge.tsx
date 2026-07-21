@@ -1,6 +1,6 @@
 import { useRef, type ReactNode } from "react";
 import Badge from "./Badge";
-import logo from "@/assets/logos/logo.png";
+import logo from "@/assets/logos/logo.webp";
 import useBadgeAnimation from "@/hooks/animations/useBadgeAnimation";
 
 interface AnimatedBadgeProps {
@@ -13,7 +13,7 @@ export default function AnimatedBadge(_props: AnimatedBadgeProps) {
   useBadgeAnimation(badgeRef);
 
   return (
-    <Badge className="bg-[#bfbdce] px-5 py-2">
+    <Badge className="bg-[#bfbdce] px-9 py-6">
       <div className="flex items-center gap-2">
         <div ref={badgeRef} className="relative h-6 overflow-hidden w-[95px]">
           <div className="badge-slider flex flex-col">
@@ -22,7 +22,7 @@ export default function AnimatedBadge(_props: AnimatedBadgeProps) {
             </div>
 
             <div className="h-6 flex items-center justify-center">
-              <img src={logo} alt="logo" className="h-6 w-auto" />
+              <img src={logo} alt="" width={96} height={24} decoding="async" className="h-6 w-auto" />
             </div>
           </div>
         </div>

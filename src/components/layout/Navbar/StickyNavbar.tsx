@@ -18,7 +18,6 @@ export default function StickyNavbar() {
 
       if (hero) {
         const heroBottom = hero.offsetTop + hero.offsetHeight - 80;
-
         setShow(window.scrollY > heroBottom);
       } else {
         setShow(window.scrollY > window.innerHeight - 80);
@@ -32,50 +31,62 @@ export default function StickyNavbar() {
   }, []);
 
   return (
-    <header
+    <div
+      aria-hidden={!show}
       className={`
         fixed
-        top-4
-        left-0
-        right-0
+        inset-x-0
+        top-2
         z-[60]
+        px-4
         transition-all
         duration-300
+        md:top-4
         ${
           show
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 -translate-y-5 pointer-events-none"
+            ? "translate-y-0 opacity-100"
+            : "-translate-y-5 opacity-0 pointer-events-none"
         }
       `}
     >
       <Container>
         <div
           className="
-            h-20
-            border
-            rounded-full
-            bg-white
-            shadow-lg
-            px-8
             flex
+            h-16
             items-center
             justify-between
+            rounded-full
+            border
+            border-black/5
+            bg-white
+            px-4
+            shadow-lg
+            md:h-20
+            md:px-8
           "
         >
-          <Logo />
+          {/* Responsive Logo */}
+          <Logo className="h-9 w-auto md:h-12" />
 
+          {/* Desktop Navigation */}
           <div className="hidden min-[1140px]:flex items-center gap-10">
             <NavLinks />
             <NavActions />
           </div>
 
-          <div className="block min-[1140px]:hidden">
-            <MobileMenuButton isOpen={isOpen} setIsOpen={setIsOpen} />
+          <div className="min-[1140px]:hidden">
+            <MobileMenuButton
+              isOpen={isOpen}
+              setIsOpen={setIsOpen}
+              tabIndex={show ? 0 : -1}
+              controlsId="mobile-menu-sticky"
+            />
           </div>
         </div>
       </Container>
 
-      <MobileMenu isOpen={isOpen} setIsOpen={setIsOpen} />
-    </header>
+      <MobileMenu isOpen={isOpen} setIsOpen={setIsOpen} id="mobile-menu-sticky" />
+    </div>
   );
 }

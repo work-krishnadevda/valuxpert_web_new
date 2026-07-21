@@ -32,6 +32,7 @@ export default function Navbar() {
 
   return (
     <header
+      aria-hidden={!show}
       className={`
         sticky
         top-0
@@ -49,21 +50,26 @@ export default function Navbar() {
       `}
     >
       <Container>
-        <div className="flex h-20 items-center justify-between">
-          <Logo />
+        <div className="flex h-16 items-center justify-between md:h-20">
+          <Logo className="h-9 w-auto md:h-12" />
 
-          <div className="hidden min-[1071px]:flex items-center gap-10">
+          <div className="hidden min-[1140px]:flex items-center gap-10">
             <NavLinks />
             <NavActions />
           </div>
 
-          <div className="block min-[1071px]:hidden">
-            <MobileMenuButton isOpen={isOpen} setIsOpen={setIsOpen} />
+          <div className="min-[1140px]:hidden">
+            <MobileMenuButton
+              isOpen={isOpen}
+              setIsOpen={setIsOpen}
+              tabIndex={show ? 0 : -1}
+              controlsId="mobile-menu-primary"
+            />
           </div>
         </div>
       </Container>
 
-      <MobileMenu isOpen={isOpen} setIsOpen={setIsOpen} />
+      <MobileMenu isOpen={isOpen} setIsOpen={setIsOpen} id="mobile-menu-primary" />
     </header>
   );
 }

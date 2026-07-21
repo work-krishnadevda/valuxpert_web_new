@@ -14,12 +14,12 @@
   h1,
   h2,
   h3 {
-    font-family: theme('fontFamily.display');
+    font-family: theme("fontFamily.display");
   }
 
   ::selection {
-    background-color: theme('colors.brand.400');
-    color: theme('colors.surface.dark1');
+    background-color: theme("colors.brand.400");
+    color: theme("colors.surface.dark1");
   }
 }
 
@@ -29,7 +29,9 @@
   .reveal-up {
     opacity: 0;
     transform: translateY(28px);
-    transition: opacity 0.7s theme('transitionTimingFunction.premium'), transform 0.7s theme('transitionTimingFunction.premium');
+    transition:
+      opacity 0.7s theme("transitionTimingFunction.premium"),
+      transform 0.7s theme("transitionTimingFunction.premium");
     will-change: opacity, transform;
   }
   .reveal-up.is-visible {
@@ -48,20 +50,56 @@
   /* Gentle perpetual float used for "Before vs After" comparison rows and
      other elements that should feel alive without stealing attention. */
   @keyframes gentle-float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-6px); }
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-6px);
+    }
   }
   .animate-gentle-float {
     animation: gentle-float 5s ease-in-out infinite;
   }
 
+  @keyframes autoplay-progress {
+    from {
+      width: 0%;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
   @keyframes orbit-spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
   }
   @keyframes orbit-spin-reverse {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(-360deg); }
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(-360deg);
+    }
+  }
+
+  @keyframes screen-swap {
+    from {
+      opacity: 0;
+      transform: translateY(10px) scale(0.97);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+  .animate-screen-swap {
+    animation: screen-swap 0.45s theme("transitionTimingFunction.premium");
   }
 }
 
@@ -111,12 +149,20 @@
      CTA copy in the reference study. Purely decorative, pointer-events none. */
   .glow-orb-brand {
     @apply pointer-events-none absolute rounded-full opacity-70 blur-3xl;
-    background: radial-gradient(circle, rgba(139, 124, 218, 0.35), transparent 70%);
+    background: radial-gradient(
+      circle,
+      rgba(139, 124, 218, 0.35),
+      transparent 70%
+    );
   }
 
   .glow-orb-amber {
     @apply pointer-events-none absolute rounded-full opacity-60 blur-3xl;
-    background: radial-gradient(circle, rgba(183, 171, 234, 0.3), transparent 70%);
+    background: radial-gradient(
+      circle,
+      rgba(183, 171, 234, 0.3),
+      transparent 70%
+    );
   }
 
   /* Framed panel: a large rounded, glowing container used for CTA and
@@ -131,4 +177,39 @@
   .text-balance {
     text-wrap: balance;
   }
+}
+
+@theme {
+  --animate-marquee: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.premium-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(109, 94, 246, 0.45) transparent;
+}
+
+.premium-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.premium-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.premium-scroll::-webkit-scrollbar-thumb {
+  background: rgba(109, 94, 246, 0.45);
+  border-radius: 999px;
+}
+
+.premium-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(109, 94, 246, 0.75);
 }
