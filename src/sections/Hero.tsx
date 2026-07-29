@@ -11,7 +11,7 @@ import { useBookingModal } from "@/lib/BookingModalContext";
 export function Hero() {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const descRef = useRef<HTMLParagraphElement>(null);
-const { open: openBooking } = useBookingModal();
+  const { open: openBooking } = useBookingModal();
 
   useFadeUp(titleRef);
   useFadeUp(descRef, { delay: 0.2 });
@@ -54,25 +54,7 @@ const { open: openBooking } = useBookingModal();
 
           <h1
             ref={titleRef}
-            className="
-mt-8
-max-w-6xl
-text-4xl
-font-black
-leading-[0.95]
-tracking-[-0.05em]
-text-transparent
-bg-clip-text
-bg-gradient-to-r
-from-[#1d2436]
-via-[#3d4566]
-to-[#24283f]
-
-sm:text-5xl
-md:text-6xl
-lg:text-7xl
-xl:text-[6.2rem]
-"
+            className="mt-8 max-w-md sm:max-w-xl lg:max-w-4xl text-[clamp(2.25rem,1rem+6.5vw,6.2rem)] font-black leading-[1.05] tracking-[-0.02em] bg-gradient-to-r from-[#1d2436] via-[#3d4566] to-[#24283f] bg-clip-text text-transparent"
           >
             {heroData.title}
           </h1>
@@ -132,18 +114,18 @@ xl:text-[6.2rem]
             </Button>
 
             <a
-  href="https://docs-whisperer-guide.lovable.app/"
-  target="_ "
-  className="group inline-flex h-14 items-center justify-center rounded-2xl border border-white/15 bg-white/10 px-8 font-medium text-white backdrop-blur-xl shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-white/30 hover:bg-white/20 hover:shadow-xl active:scale-95"
->
-  <span className="flex items-center gap-2.5">
-    <Play
-      size={16}
-      className="fill-current transition-transform duration-300 group-hover:scale-110"
-    />
-    {heroData.secondaryButton.label}
-  </span>
-</a>
+              href="https://docs-whisperer-guide.lovable.app/"
+              target="_ "
+              className="group inline-flex h-14 items-center justify-center rounded-2xl border border-white/15 bg-white/10 px-8 font-medium text-white backdrop-blur-xl shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-white/30 hover:bg-white/20 hover:shadow-xl active:scale-95"
+            >
+              <span className="flex items-center gap-2.5">
+                <Play
+                  size={16}
+                  className="fill-current transition-transform duration-300 group-hover:scale-110"
+                />
+                {heroData.secondaryButton.label}
+              </span>
+            </a>
           </div>
 
           <div

@@ -12,25 +12,21 @@ export default {
     },
     extend: {
       colors: {
-        // ValuXpert editorial palette — warm ivory, soft lavender, deep
-        // charcoal. Token names are preserved from the previous system so
-        // every section that already consumes surface/brand/ink/accent
-        // automatically inherits the new theme.
         surface: {
-          light1: '#F7F5F2', // Warm Ivory
-          light2: '#ECE8FA', // Light Lilac
-          dark1: '#1E1E1E', // Deep Charcoal
-          dark2: '#141414', // Charcoal, one step darker (cards on dark sections)
+          light1: '#F7F5F2',
+          light2: '#ECE8FA',
+          dark1: '#1E1E1E',
+          dark2: '#141414',
         },
         brand: {
-          400: '#B7ABEA', // Lavender, lifted for dark backgrounds
-          500: '#8B7CDA', // Core lavender accent
-          600: '#6B59C4', // Deeper lavender for text-on-light
+          400: '#B7ABEA',
+          500: '#8B7CDA',
+          600: '#6B59C4',
         },
         ink: {
-          light: '#1E1E1E', // Deep Charcoal
-          dark: '#F7F5F2', // Warm Ivory (text on dark)
-          muted: '#7A7A7A', // Warm Gray
+          light: '#1E1E1E',
+          dark: '#F7F5F2',
+          muted: '#7A7A7A',
         },
         accent: {
           action: '#8B7CDA',
@@ -46,18 +42,27 @@ export default {
         charcoal: '#1E1E1E',
       },
       fontFamily: {
-        display: ['"Fraunces"', '"Playfair Display"', 'serif'],
+        display: ['"Geist"', '"Playfair Display"', 'serif'],
         body: ['Inter', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'monospace'],
       },
       fontSize: {
-        h1: ['clamp(2.75rem, 2rem + 3.2vw, 5.25rem)', { lineHeight: '1.02', letterSpacing: '-0.01em', fontWeight: '600' }],
-        h2: ['clamp(2rem, 1.5rem + 1.8vw, 3.125rem)', { lineHeight: '1.08', letterSpacing: '-0.01em', fontWeight: '600' }],
+        h1: [
+          'clamp(2.75rem, 2rem + 3.2vw, 5.25rem)',
+          { lineHeight: '1.08', letterSpacing: '-0.01em', fontWeight: '600' },
+        ],
+        h2: [
+          'clamp(2rem, 1.5rem + 1.8vw, 3.125rem)',
+          { lineHeight: '1.15', letterSpacing: '-0.01em', fontWeight: '600' },
+        ],
         h3: ['1.375rem', { lineHeight: '1.3', fontWeight: '600' }],
         body: ['1rem', { lineHeight: '1.6', fontWeight: '400' }],
         nav: ['0.875rem', { lineHeight: '1', fontWeight: '500' }],
         eyebrow: ['0.75rem', { lineHeight: '1', letterSpacing: '0.08em', fontWeight: '600' }],
-        metric: ['clamp(2rem, 1.6rem + 1.2vw, 2.75rem)', { lineHeight: '1', letterSpacing: '-0.015em', fontWeight: '700' }],
+        metric: [
+          'clamp(2rem, 1.6rem + 1.2vw, 2.75rem)',
+          { lineHeight: '1.1', letterSpacing: '-0.015em', fontWeight: '700' },
+        ],
       },
       borderRadius: {
         card: '28px',

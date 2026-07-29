@@ -24,8 +24,6 @@
 }
 
 @layer utilities {
-  /* Scroll-reveal primitive used across sections via the useInView hook.
-     Elements start hidden/offset and settle into place once in viewport. */
   .reveal-up {
     opacity: 0;
     transform: translateY(28px);
@@ -46,9 +44,6 @@
   .reveal-fade.is-visible {
     opacity: 1;
   }
-
-  /* Gentle perpetual float used for "Before vs After" comparison rows and
-     other elements that should feel alive without stealing attention. */
   @keyframes gentle-float {
     0%,
     100% {
@@ -144,9 +139,6 @@
     @apply py-24 md:py-32;
   }
 
-  /* Soft radial glow accents used behind headlines on light and dark
-     sections — mirrors the diffused color-wash treatment behind hero and
-     CTA copy in the reference study. Purely decorative, pointer-events none. */
   .glow-orb-brand {
     @apply pointer-events-none absolute rounded-full opacity-70 blur-3xl;
     background: radial-gradient(
@@ -165,9 +157,6 @@
     );
   }
 
-  /* Framed panel: a large rounded, glowing container used for CTA and
-     showcase moments — the "banner inside a banner" composition seen
-     repeatedly in the reference (integrations, CTA, quote blocks). */
   .panel-framed-dark {
     @apply relative overflow-hidden rounded-card border border-white/10 bg-surface-dark1;
   }
