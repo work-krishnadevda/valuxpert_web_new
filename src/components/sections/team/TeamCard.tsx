@@ -27,7 +27,7 @@ export const TeamCard = memo(function TeamCard({
       "
     >
       <div className="relative overflow-visible">
-        {/* IMAGE */}
+
         <div className="relative h-[460px] overflow-hidden rounded-[30px] shadow-xl">
           <img
             src={member.image}
@@ -49,7 +49,6 @@ export const TeamCard = memo(function TeamCard({
           <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
         </div>
 
-        {/* LinkedIn */}
         <a
           href={member.linkedin}
           target="_blank"
@@ -89,7 +88,6 @@ export const TeamCard = memo(function TeamCard({
           <Linkedin size={18} />
         </a>
 
-        {/* SINGLE EXPANDING GLASS CARD */}
         <div
           className="
             absolute
@@ -149,7 +147,7 @@ export const TeamCard = memo(function TeamCard({
                 group-hover:opacity-100
               "
             >
-              <p className="text-[15px] leading-7 text-white/95">
+              <p className="text-[14px] leading-7 text-white/95">
                 {member.description}
               </p>
             </div>

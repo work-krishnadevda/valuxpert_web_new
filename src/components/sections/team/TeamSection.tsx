@@ -7,7 +7,6 @@ export function TeamSection() {
       id="team"
       className="relative overflow-hidden bg-surface-light1 pb-20 md:pb-28"
     >
-      {/* Background Glow */}
       <div className="glow-orb-brand absolute -left-40 top-0 h-[380px] w-[380px] opacity-30 blur-3xl" />
       <div className="glow-orb-amber absolute -right-40 bottom-0 h-[380px] w-[380px] opacity-30 blur-3xl" />
 
