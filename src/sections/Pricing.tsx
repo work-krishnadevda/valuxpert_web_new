@@ -7,7 +7,7 @@ import { Check } from 'lucide-react';
 export function Pricing() {
   const { open } = useContactModal();
   return (
-    <section id="pricing" className="section-pad bg-surface-light1">
+    <section id="pricing" className="bg-surface-light1">
       <Container className="flex flex-col gap-12">
         <SectionHeading
           align="center"
