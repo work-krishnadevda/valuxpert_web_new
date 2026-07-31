@@ -1,3 +1,9 @@
+import realAppleLogo from "@/assets/logos/realapple.webp";
+import madhukarLogo from "@/assets/logos/madhukar_associates.png";
+import bohraLogo from "@/assets/logos/bohra-brothers.png";
+import ambaLogo from "@/assets/logos/amba-associates.png";
+
+
 export const navLinks = [
   { label: "Before / After", href: "#before-after" },
   { label: "Features", href: "#features" },
@@ -16,9 +22,22 @@ export const heroChips = [
 ];
 
 export const trustLogos = [
-  "Real Apple",
-  "Madhukar Associate",
-  "Bohra Associate",
+  {
+    name: "Real Apple",
+    logo: realAppleLogo,
+  },
+  {
+    name: "Madhukar Associate",
+    logo: madhukarLogo,
+  },
+  {
+    name: "Amba Associates",
+    logo: ambaLogo,
+  },
+  {
+    name: "Bohra Brothers",
+    logo: bohraLogo,
+  },
 ];
 
 export const problemCards = [
@@ -522,6 +541,51 @@ export const pipelineNodes: PipelineNode[] = [
     title: "Claims & Muster",
     icon: "users",
     status: "queued",
+  },
+];
+
+export const securityFeatures = [
+  {
+    id: "01",
+    title: "Secure Cloud Infrastructure (AWS)",
+    description:
+      "Your data is hosted on Amazon Web Services (AWS EC2), trusted by banks, fintechs, and Fortune 500 companies with enterprise-grade physical and network security.",
+    scopeTag: "Cloud Hosted",
+  },
+  {
+    id: "02",
+    title: "End-to-End Data Encryption",
+    description:
+      "Every valuation report, client record, and document is encrypted both at rest and in transit, ensuring protection throughout its entire lifecycle.",
+    scopeTag: "Encrypted",
+  },
+  {
+    id: "03",
+    title: "Tenant-Level Data Isolation",
+    description:
+      "Each valuation company operates within its own logically isolated workspace, preventing any report, query, or file from being accessed by another organization.",
+    scopeTag: "Data Isolation",
+  },
+  {
+    id: "04",
+    title: "Zero Cross-Company Visibility",
+    description:
+      "Client information, valuation records, and business data remain completely invisible to every other company using the ValuXpert platform.",
+    scopeTag: "Privacy First",
+  },
+  {
+    id: "05",
+    title: "Role-Based Access Control",
+    description:
+      "Granular permissions ensure valuers, reviewers, approvers, and administrators can only access the data and actions relevant to their assigned roles.",
+    scopeTag: "Access Control",
+  },
+  {
+    id: "06",
+    title: "Secure & Isolated File Storage",
+    description:
+      "Property images, signed reports, and field documents are stored in encrypted, tenant-partitioned storage, eliminating the risk of accidental cross-company access.",
+    scopeTag: "Secure Storage",
   },
 ];
 

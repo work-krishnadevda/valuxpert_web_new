@@ -19,9 +19,11 @@ import { ActiveDeskSandbox } from "@/sections/ActiveDeskSandbox";
 import { Lifecycle } from "@/sections/Lifecycle";
 import { FeatureEcosystem } from "@/sections/FeatureEcosystem";
 import { HRMS } from "@/sections/HRMS";
+import { Security } from "./sections/Security";
 import { Metrics } from "@/sections/Metrics";
 import { Testimonials } from "@/sections/Testimonials";
 import { Pricing } from "@/sections/Pricing";
+import { TeamSection } from "./components/sections/team/TeamSection";
 import { CTA } from "@/sections/CTA";
 import { Footer } from "@/sections/Footer";
 import { BookingModalProvider } from "@/lib/BookingModalContext";
@@ -92,9 +94,11 @@ function App() {
               <Lifecycle />
               <FeatureEcosystem />
               <HRMS />
+              <Security />
               <Metrics />
               <Testimonials />
               <Pricing />
+              <TeamSection />
               <CTA />
             </main>
             <Footer />
