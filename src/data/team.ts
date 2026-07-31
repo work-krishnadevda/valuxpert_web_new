@@ -19,7 +19,7 @@ export const teamMembers: TeamMember[] = [
     image: siddhantImage,
     linkedin: "https://www.linkedin.com/in/property-valuation-software/",
     description:
-      "Siddhant S. is the Co-Founder of ValuXpert, building technology to transform how valuation companies operate. His mission is to help firms eliminate operational inefficiencies and scale with software purpose-built for the valuation industry.",
+  "Co-Founder of ValuXpert, Siddhant S. builds technology that helps valuation firms eliminate inefficiencies and scale efficiently.",
     tags: [
       "PropTech",
       "Product",
