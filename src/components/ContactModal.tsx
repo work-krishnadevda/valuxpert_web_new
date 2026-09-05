@@ -172,7 +172,7 @@ export function ContactModal() {
                     <ContactCard
                       icon={<MapPin size={18} />}
                       title="Office"
-                      value="Ratlam, Madhya Pradesh"
+                      value="E-77, E Block, Sector 56, Gurugram, Haryana-122018, India"
                     />
                   </div>
 
